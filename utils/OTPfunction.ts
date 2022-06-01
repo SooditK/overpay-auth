@@ -52,7 +52,7 @@ export const otpVerificationEmail = async (
     });
     await newOTPVerification.save();
     // send the email
-    await transporter.sendMail(mailOptions, (error, info) => {
+    transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.log(error);
       } else {
