@@ -1,13 +1,14 @@
+import "dotenv/config";
 import { Response } from "express";
 import bcrypt from "bcryptjs";
 import userVerification from "../model/userVerification";
 import nodemailer from "nodemailer";
 
 let transporter = nodemailer.createTransport({
-  service: "gmail",
+  service: "SendGrid",
   auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD,
+    user: process.env.SENDGRID_USER,
+    pass: process.env.SENDGRID_PASSWORD,
   },
 });
 
